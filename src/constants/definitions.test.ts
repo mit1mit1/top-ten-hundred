@@ -62,13 +62,13 @@ const missingElements = definedWords
 	.map(([keyword, definition]) => keyword)
 	.filter((keyword) => !firstLoop.includes(keyword));
 console.log(`It's missing elements are ${JSON.stringify(missingElements)}\n`);
-const secondLoop = uniqueSortedArrays[0];
-// console.log(`the first loop is ${JSON.stringify(secondLoop)}\n`);
-// console.log(`it's undefined elements are ${JSON.stringify(secondLoop.filter(keyword => !definitions[keyword]))}\n`);
-const missingElementsSecond = definedWords
-	.map(([keyword, definition]) => keyword)
-	.filter((keyword) => !secondLoop.includes(keyword));
-console.log(`Seconds missing elements are ${JSON.stringify(missingElementsSecond)}\n`);
+// const secondLoop = uniqueSortedArrays[1];
+// // console.log(`the first loop is ${JSON.stringify(secondLoop)}\n`);
+// // console.log(`it's undefined elements are ${JSON.stringify(secondLoop.filter(keyword => !definitions[keyword]))}\n`);
+// const missingElementsSecond = definedWords
+// 	.map(([keyword, definition]) => keyword)
+// 	.filter((keyword) => !secondLoop.includes(keyword));
+// console.log(`Seconds missing elements are ${JSON.stringify(missingElementsSecond)}\n`);
 
 const allWordsUsedInDefinitions = Object.values(definitions)
 	.map((definitionString) => getWords(definitionString))
