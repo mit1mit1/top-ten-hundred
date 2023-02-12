@@ -1,4 +1,4 @@
-import { getWords } from '../utils/splitter';
+import { getDefinedWords, getWords } from '../utils/definitionManipulation';
 import { definitions } from './definitions';
 import { describe, expect, it } from 'vitest';
 
@@ -17,7 +17,7 @@ const pushWords = (definition: string, words: Set<string>) => {
 	return words;
 };
 
-const definedWords = Object.entries(definitions).filter((entry) => entry[1].length > 0);
+const definedWords = getDefinedWords(definitions)
 console.log(
 	'You have defined ' +
 		definedWords.length +
