@@ -5,7 +5,7 @@
 	const definedWords = getDefinedWords(definitions);
 
 	let selectedWord = definedWords[0][0];
-	let splitDefinition = definitions[sanitizeWord(selectedWord)].split(" ");
+	let splitDefinitions = definitions[sanitizeWord(selectedWord)].split(" ");
 
     let clicks = 0;
 </script>

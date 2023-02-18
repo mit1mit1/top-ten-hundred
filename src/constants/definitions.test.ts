@@ -5,19 +5,21 @@ import { describe, expect, it } from 'vitest';
 const eqSet = (xs: Set<string>, ys: Set<string>) =>
 	xs.size === ys.size && [...xs].every((x) => ys.has(x));
 
-const pushWords = (definition: string, words: Set<string>) => {
-	getWords(definition).forEach((word) => {
-		if (!words.has(word)) {
-			words.add(word);
-			if (definitions[word]) {
-				pushWords(definitions[word], words);
+const pushWords = (definition: Array<string>, words: Set<string>) => {
+	definition.forEach((partialDefinition) => {
+		getWords(partialDefinition).forEach((word) => {
+			if (!words.has(word)) {
+				words.add(word);
+				if (definitions[word]) {
+					pushWords(definitions[word], words);
+				}
 			}
-		}
+		});
 	});
 	return words;
 };
 
-const definedWords = getDefinedWords(definitions)
+const definedWords = getDefinedWords(definitions);
 console.log(
 	'You have defined ' +
 		definedWords.length +
@@ -31,11 +33,13 @@ const uniqueSets: Array<Set<string>> = [];
 describe('definition object is contained', () => {
 	it('only references itself in definitions', () => {
 		const keys = Object.keys(definitions);
-		Object.values(definitions).forEach((definition) =>
-			getWords(definition).forEach((word) => {
-				expect(keys).toContain(word);
-			})
-		);
+		Object.values(definitions).forEach((definition) => {
+			definition.forEach((partialDefinition) => {
+				getWords(partialDefinition).forEach((word) => {
+					expect(keys).toContain(word);
+				});
+			});
+		});
 	});
 });
 definedWords.forEach(([keyword, definition]) => {
@@ -52,16 +56,19 @@ const uniqueSortedArrays = uniqueSets.map((set) => Array.from(set).sort());
 
 console.log(`there are ${uniqueSortedArrays.length} distinct loops\n\n`);
 const firstLoop = uniqueSortedArrays[0];
-console.log(`the first loop is ${JSON.stringify(firstLoop)}\n`);
+console.log(`the first loop is ${JSON.stringify(firstLoop)} (${firstLoop.length})\n`);
+const firstUndefined = firstLoop.filter(
+	(keyword) => !definedWords.map((definition) => definition[0]).includes(keyword)
+);
 console.log(
 	`it's undefined elements are ${JSON.stringify(
-		firstLoop.filter((keyword) => !definitions[keyword])
-	)}\n`
+		firstUndefined
+	)} (${firstUndefined.length})\n`
 );
 const missingElements = definedWords
 	.map(([keyword, definition]) => keyword)
 	.filter((keyword) => !firstLoop.includes(keyword));
-console.log(`It's missing elements are ${JSON.stringify(missingElements)}\n`);
+console.log(`It's missing elements are ${JSON.stringify(missingElements)} (${missingElements.length})\n`);
 // const secondLoop = uniqueSortedArrays[1];
 // // console.log(`the first loop is ${JSON.stringify(secondLoop)}\n`);
 // // console.log(`it's undefined elements are ${JSON.stringify(secondLoop.filter(keyword => !definitions[keyword]))}\n`);
@@ -71,6 +78,7 @@ console.log(`It's missing elements are ${JSON.stringify(missingElements)}\n`);
 // console.log(`Seconds missing elements are ${JSON.stringify(missingElementsSecond)}\n`);
 
 const allWordsUsedInDefinitions = Object.values(definitions)
+	.flat(2)
 	.map((definitionString) => getWords(definitionString))
 	.flat(1);
 
@@ -105,20 +113,78 @@ console.log(`these words are defined but not referenced anywhere: ${unreferenced
 // 	);
 // });
 
-// 'area',   'become',  'behind',    'change',  'focus',  'game',
-// 'how',    'if',      'important', 'instead', 'is',     'it',
-// 'its',    'just',    'keep',      'kind',    'knee',   'know',
-// 'last',   'late',    'learn',     'least',   'less',   'let',
-// 'lie',    'life',    'like',      'line',    'little', 'live',
-// 'long',   'look',    'lose',      'lot',     'loud',   'low',
-// 'mad',    'made',    'make',      'many',    'may',    'maybe',
-// 'me',     'mean',    'meant',     'middle',  'might',  'mine',
-// 'more',   'most',    'much',      'must',    'near',   'neck',
-// 'need',   'nervous', 'never',     'next',    'nice',   'no',
-// 'noise',  'normal',  'nose',      'not',     'number', 'of',
-// 'off',    'often',   'old',       'on',      'once',   'one',
-// 'only',   'open',    'or',        'other',   'out',    'outside',
-// 'over',   'own',     'pain',      'part',    'party',  'past',
-// 'people', 'phone',   'picture',   'piece',   'pink',   'place',
-// 'play',   'point',   'pretend',   'put',     'quick',  'quickly',
-// 'quite',  'read',    'reason',    'rest',
+// "must"
+// "my"
+// "near"
+// "neck"
+// "need"
+// "new"
+// "next"
+// "no"
+// "normal"
+// "not"
+// "of"
+// "off"
+// "old"
+// "on"
+// "once"
+// "one"
+// "only"
+// "onto"
+// "open"
+// "or"
+// "other"
+// "out"
+// "over"
+// "own"
+// "part"
+// "past"
+// "pay"
+// "pick"
+// "piece"
+// "pink"
+// "play"
+// "point"
+// "pretty"
+// "put"
+// "quite"
+// "reason"
+// "rest"
+// "road"
+// "rock"
+// "room"
+// "round"
+// "sad"
+// "safe"
+// "said"
+// "same"
+// "say"
+// "seem"
+// "seen"
+// "set"
+// "shot"
+// "should"
+// "shut"
+// "side"
+// "skin"
+// "so"
+// "soft"
+// "some"
+// "sort"
+// "spend"
+// "spot"
+// "start"
+// "stay"
+// "step"
+// "stick"
+// "still"
+// "strong"
+// "stuck"
+// "stuff"
+// "than"
+// "that"
+// "their"
+// "these"
+// "thick"
+// "though"
+// "thought","through","to","under","use","usually","very","want","was","what","which","while","whole","wide","will","worry","would"

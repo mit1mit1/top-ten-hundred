@@ -7,5 +7,5 @@ export const getWords = (definition: string) => {
 		.filter((word) => word.length > 0);
 };
 
-export const getDefinedWords = (definitions: Record<string, string>) =>
-	Object.entries(definitions).filter((entry) => entry[1].length > 0);
+export const getDefinedWords = (definitions: Record<string, Array<string>>) =>
+	Object.entries(definitions).filter((entry) => entry[1][0].length > 0);
