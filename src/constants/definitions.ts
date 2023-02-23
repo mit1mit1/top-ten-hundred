@@ -47,7 +47,9 @@ export const definitions: Record<string, Array<string>> = {
 	already: [`to have been before`],
 	alright: [`a thing you say when you agree with what was said`, `when something is a bit good`],
 	also: [`as well as - a word you use when you want to say both one thing and some other thing`],
-	although: [``],
+	although: [
+		`like "though" or "however" or "be that as it may" - a word you use to say, "while this may be the truth, there is a different thing"`
+	],
 	always: [`at every time - when a thing is never not this way`],
 	am: [`like "be" but about me - the answer to "what is me" is everything that I am`],
 	amaze: [`to surprise someone with something that is very not normal`],
@@ -409,7 +411,7 @@ export const definitions: Record<string, Array<string>> = {
 	enter: [`go inside a place`],
 	entire: [`all of a thing`],
 	escape: [`leave a place that is hard to leave`],
-	especially: [``],
+	especially: [`a word you use to put focus on the next thing you say`],
 	even: [
 		`when a number is two add two add two and so on`,
 		`when more than one thing can all do the same thing as each other`
@@ -640,7 +642,9 @@ export const definitions: Record<string, Array<string>> = {
 	hour: [`a bit of time - there are twenty and four of these in a day`],
 	house: [`a type of home - a place that has a wall on each side`],
 	how: [`in what way a thing did happen`, `a word you use to ask whether a thing was or is good`],
-	however: [``],
+	however: [
+		`like "though" or "although" or "be that as it may" - a word you use to say, "while this may be the truth, there is a different thing"`
+	],
 	hug: [`to hold someone with your arm to say you love them`],
 	huge: [`very large`],
 	huh: [``],
@@ -871,7 +875,10 @@ export const definitions: Record<string, Array<string>> = {
 	mutter: [`talk in a quiet and quick way that is hard to understand, often because you are mad`],
 	my: [`a thing that I own is my thing`],
 	myself: [``],
-	name: [``],
+	name: [
+		`a word which you use to talk about a person or group`,
+		`to say the name of something so that the person you talk to does know which something you talk about`
+	],
 	near: [`close to something, when it is easy and quick to get somewhere`],
 	nearly: [``],
 	neck: [
@@ -1007,7 +1014,10 @@ export const definitions: Record<string, Array<string>> = {
 	],
 	police: [``],
 	pop: [``],
-	position: [`the place something has been put`, `the place you are, the people you know, the power you have, the stuff you have to decide between`],
+	position: [
+		`the place something has been put`,
+		`the place you are, the people you know, the power you have, the stuff you have to decide between`
+	],
 	possible: [
 		`maybe a thing is real, maybe it will be real, or maybe not - if we've heard something is the truth from someone, but we haven't got a reason to trust them, it's just possible it is the truth`
 	],
@@ -1088,21 +1098,37 @@ export const definitions: Record<string, Array<string>> = {
 		`the thing that is good, or the word or so that is the same as the thing it is about`
 	],
 	ring: [``],
-	road: [`a wide and hard thing people did make so they could go from one place to another with less trouble - often a thing you drive a car or bus on, but not a train`],
-	rock: [`a hard thing that no person did make - often brown or grey, maybe blue or white if it you need more money to buy it`],
+	road: [
+		`a wide and hard thing people did make so they could go from one place to another with less trouble - often a thing you drive a car or bus on, but not a train`
+	],
+	rock: [
+		`a hard thing that no person did make - often brown or grey, maybe blue or white if it you need more money to buy it`
+	],
 	roll: [``],
-	room: [`one part of a house or apartment or shop, that has a wall on each side of it`, `when there is enough space for more stuff to be put in it`],
+	room: [
+		`one part of a house or apartment or shop, that has a wall on each side of it`,
+		`when there is enough space for more stuff to be put in it`
+	],
 	rose: [``],
-	round: [`not straight - when a thing without a corner does not have an end and does surround something`],
+	round: [
+		`not straight - when a thing without a corner does not have an end and does surround something`
+	],
 	rub: [``],
 	run: [
 		`like "walk", but much more fast, and with both feet off the ground - if you need to escape and you can't drive, a burst of a run is your best chance`
 	],
 	rush: [``],
-	sad: [`not happy - what you feel when stuff is not what you want it to be, maybe because your friend is sick or your dinner is cold`],
-	safe: [`when a person can not be hurt or a thing can't be broken`, `a box you can use to keep something safe`],
+	sad: [
+		`not happy - what you feel when stuff is not what you want it to be, maybe because your friend is sick or your dinner is cold`
+	],
+	safe: [
+		`when a person can not be hurt or a thing can't be broken`,
+		`a box you can use to keep something safe`
+	],
 	said: [`when someone did say something in the past`],
-	same: [`not different at all - when you can't tell whether it is something or another something, the something and other something are the same`],
+	same: [
+		`not different at all - when you can't tell whether it is something or another something, the something and other something are the same`
+	],
 	sat: [``],
 	save: [`keep something safe when it was about to be hurt or broken`, `except if`],
 	saw: [``],
@@ -1158,8 +1184,13 @@ export const definitions: Record<string, Array<string>> = {
 	shook: [``],
 	shop: [`a place where you can buy a thing or so`],
 	short: [`it is not very far from the bottom of a short thing to the top of a short thing`],
-	shot: [`a thing that someone did fire a gun at was shot`, `the thing that does fly through the air when someone does fire a gun`],
-	should: [`a thing that you would like anyone to do if they were in the position you were in is something you should do`],
+	shot: [
+		`a thing that someone did fire a gun at was shot`,
+		`the thing that does fly through the air when someone does fire a gun`
+	],
+	should: [
+		`a thing that you would like anyone to do if they were in the position you were in is something you should do`
+	],
 	shoulder: [
 		`the bit of your body where the arm should join with the rest of the body - you have one on your right and one on your left, above your arm and under your neck`
 	],
@@ -1169,11 +1200,16 @@ export const definitions: Record<string, Array<string>> = {
 	show: [``],
 	shower: [``],
 	shrug: [``],
-	shut: [`not open - when you can't get into a door or a box (save if you open it or break it)`, `to make something shut, to close something`],
+	shut: [
+		`not open - when you can't get into a door or a box (save if you open it or break it)`,
+		`to make something shut, to close something`
+	],
 	sick: [
 		`when you feel bad, maybe too hot or too cold, and need to see a doctor or go to a hospital so they can make you better`
 	],
-	side: [``],
+	side: [
+		`a part of something to the left of it, or to the right of it, or on top of it or at the bottom or it, but not your middle`
+	],
 	sigh: [
 		`like a groan, but often because you tire and not because you are angry - maybe because you admit a thing is truth but you don't like it`
 	],
@@ -1190,9 +1226,11 @@ export const definitions: Record<string, Array<string>> = {
 	sir: [``],
 	sister: [`a woman who has the same mum and dad as you`],
 	sit: [`put your bottom on something and remain in that place`],
-	situation: [``],
+	situation: [`like "position" - the place you are in, and everything around you`],
 	six: [`a number - three and three`],
-	skin: [``],
+	skin: [
+		`the bag that does keep the rest of you together - if you touch someone and you didn't touch inside their mouth, or their clothes, or their hair, you did touch their skin`
+	],
 	sky: [
 		`all the air above you when you are one the ground - it is black at night and blue in the day, and the sun should move around it`
 	],
@@ -1219,10 +1257,12 @@ export const definitions: Record<string, Array<string>> = {
 		`air that is a dark color made from fire - often can make you breathe out fast when you didn't mean to`
 	],
 	snap: [``],
-	so: [``],
-	soft: [``],
+	so: [`when there is a lot of something`, `for this reason`],
+	soft: [
+		`not hard - when you can press something and the bit you press will move but the rest of it will not`
+	],
 	softly: [``],
-	some: [``],
+	some: [`part of a thing but not all of it`],
 	somehow: [``],
 	someone: [
 		`any one person - one guy or girl or uncle or aunt or mother or son, but you don't know which one`
@@ -1236,7 +1276,10 @@ export const definitions: Record<string, Array<string>> = {
 	song: [`word after word, each word with a bit of music`],
 	soon: [`a little bit of time after now - not quite already, but close`],
 	sorry: [``],
-	sort: [``],
+	sort: [
+		`like "type", a sort of thing is like a type of thing`,
+		`part a lot of something into more than one group, so that what is in each group is all of one type`
+	],
 	sound: [
 		`a thing you can hear - might be music or a song, or a yell or a scream or a bit of talk or a mumble or a mutter`
 	],
@@ -1244,20 +1287,26 @@ export const definitions: Record<string, Array<string>> = {
 		`what a place is before there is a thing in it - empty space is a place with nothing in it, and outside space is above the sky, with the world, the sun, every star, and every thing (except maybe God) in it`
 	],
 	speak: [`make a noise with your mouth that another person can understand as a word`],
-	spend: [``],
+	spend: [`pay money`, `use time`],
 	spent: [``],
 	spoke: [``],
-	spot: [``],
+	spot: [`a very small round thing`, `to first see something you did look for`],
 	stair: [``],
 	stand: [`make your head as far from the ground as possible while your feet touch the ground`],
 	star: [`like the sun, but so far away they look very small - you can only see them at night`],
 	stare: [``],
-	start: [``],
+	start: [`begin from a point in time`],
 	state: [``],
-	stay: [``],
-	step: [``],
-	stick: [``],
-	still: [``],
+	stay: [`do not change, often, do not change where you are`],
+	step: [`as part of your walk, put one foot in front of the other`],
+	stick: [
+		`a small bit of a brown part of a tree that is close to the green stuff on the outside and top of the tree`,
+		`get close to something and make it hard to pull it away, especially if that does make it hard to pull away is a bit wet`
+	],
+	still: [
+		`when a thing that was one way did not change and is that way now, it is still the same`,
+		`while you do not move you are still`
+	],
 	stomach: [
 		`inside your body and under your chest, this is where breakfast, lunch, dinner or a sweet will go after you eat it and before it will move out your bottom`
 	],
@@ -1278,12 +1327,16 @@ export const definitions: Record<string, Array<string>> = {
 	],
 	strange: [``],
 	street: [``],
-	strong: [``],
+	strong: [
+		`when you have a lot of power in your body you are strong - when you can pull or push a very heavy thing`
+	],
 	struggle: [``],
-	stuck: [``],
+	stuck: [
+		`when you are not able to move a thing it is stuck, especially if you can't move it because it did stick to something`
+	],
 	student: [`a person who is at school or college to learn`],
 	study: [`try to understand a thing more - maybe with a book to remind us what it is`],
-	stuff: [``],
+	stuff: [`more than one thing, or a thing for which it is hard say the number of it there is`],
 	stupid: [``],
 	such: [``],
 	suck: [`pull on, often with your mouth`],
@@ -1325,14 +1378,21 @@ export const definitions: Record<string, Array<string>> = {
 	teeth: [`you should have a lot of them in your mouth - white and hard and maybe straight`],
 	tell: [`talk to someone about something`],
 	ten: [`the number of word in this word group is ten`],
-	than: [``],
+	than: [
+		`a word you use when you about to say what is different or the same between one thing and a second thing`,
+		`except for`
+	],
 	thank: [`tell someone you are happy because of what they did`],
-	that: [``],
+	that: [
+		`a word you use to talk about a person or thing when you know which one you do talk about`
+	],
 	"that's": [`short for "that is"`],
 	the: [
 		`put this in front of a word to talk about just one of something (when you know which one of that thing)`
 	],
-	their: [``],
+	their: [
+		`a word you use when you are about to talk about a thing that a person or group you did just name does own`
+	],
 	them: [
 		`two or more people that are not you or me`,
 		`a person, if you do not want to call them a him or a her`
@@ -1341,14 +1401,14 @@ export const definitions: Record<string, Array<string>> = {
 	then: [`a time that was before now`],
 	there: [`a word for a place that is somewhere you are not`, `a word to say that something is`],
 	"there's": [`short for "there is"`],
-	these: [``],
+	these: [`like "this", but for more than one of whatever it is`],
 	they: [
 		`two or more people (or more than one thing) that is not you or me`,
 		`a person, if you do not want to call them a him or a her`
 	],
 	"they'd": [`short for "they did" or "they had"`],
 	"they're": [`short for "they are"`],
-	thick: [``],
+	thick: [`like "wide", especially for something that is at least a bit tall`],
 	thing: [
 		`one of anything - often something you can touch - might be a ball, or a dog, or a cup, or a sun`
 	],
@@ -1358,14 +1418,16 @@ export const definitions: Record<string, Array<string>> = {
 		`put this in front of a word to talk about just one of something (when you know which one of that thing and you are right at it)`
 	],
 	those: [``],
-	though: [``],
-	thought: [``],
+	though: [
+		`like "although" or "however" or "be that as it may" - a word you use to say, "while this may be the truth, there is a different thing"`
+	],
+	thought: [`an idea you had, especially from when you did think for a while`],
 	three: [`one thing, and one more thing, and one more thing, but no more than that`],
 	threw: [`when you had done a throw before`],
 	throat: [
 		`the thing above your body, under your head, and inside your neck - air will go through this when you breathe`
 	],
-	through: [``],
+	through: [`from one side of something to the other`],
 	throw: [`use your arm to push something`],
 	tie: [
 		`wrap a soft and long thing so that it is stuck to it`,
@@ -1381,7 +1443,7 @@ export const definitions: Record<string, Array<string>> = {
 		`very small - maybe hard to see because it is so small - maybe a hair or the small thing that air is made of`
 	],
 	tire: [`make someone want to be asleep`],
-	to: [``],
+	to: [`go more close to something`, `a word you use to say a word about an act, as I did in this group of more than one word`],
 	today: [
 		`the day it is now, if the sun is in the sky - tomorrow, it will be tomorrow, but for now it is today`
 	],
@@ -1445,7 +1507,7 @@ export const definitions: Record<string, Array<string>> = {
 		`what group that are all like each other a thing is part of`
 	],
 	uncle: [`the brother of your dad, or the brother of your mum`],
-	under: [``],
+	under: [`more low than something, with it in a straight line up from you`],
 	understand: [
 		`when you know what a thing is about - when you know what someone has in their brain`
 	],
@@ -1453,10 +1515,10 @@ export const definitions: Record<string, Array<string>> = {
 	up: [`away from the ground - on the way to the sky`],
 	upon: [``],
 	us: [`you and me (if we are together), and maybe other people with us`],
-	use: [``],
+	use: [`when you have a thing that you need to do something, you need to use the thing to do the something`],
 	usual: [``],
-	usually: [``],
-	very: [``],
+	usually: [`more often than not`],
+	very: [`a lot, or especially - a word you use to make the thing you are about to talk about seem more important or large`],
 	visit: [`go somewhere for a little bit of time`],
 	voice: [`when you talk to someone, the noise you make from your mouth is your voice`],
 	wait: [`stop what you do until the thing you expect to happen does happen`],
@@ -1467,10 +1529,10 @@ export const definitions: Record<string, Array<string>> = {
 	wall: [
 		`some stuff put on top of other stuff to block one place from another - might be a tiny wall to keep a little green live thing safe, a more big wall to hold up a house, or a huge wall that I'd be able to see if I was in space, and they'd not be able to get around if they went very very far left or right`
 	],
-	want: [``],
+	want: [`when you would like to have something you want it`],
 	warm: [`almost hot, but it should feel more nice - or, to make something more hot`],
 	warn: [`tell someone that something bad is about to happen`],
-	was: [``],
+	was: [`like "be" but in the past`],
 	"wasn't": [`short for "was not"`],
 	watch: [
 		`to look at something for a while`,
@@ -1498,18 +1560,18 @@ export const definitions: Record<string, Array<string>> = {
 	wet: [
 		`when something has water on it and it is not as hard anymore, and maybe not as hot either`
 	],
-	what: [``],
+	what: [`a word you use to ask to know about something`],
 	"what's": [`short for "what is"`],
-	whatever: [``],
+	whatever: [`of any kind, at all`],
 	when: [
 		`a word you use to ask or say what time a thing is - you might ask "when she'd like to hear the band?" if you would like to know the time she would like to hear some music, to which the answer might be "Tonight" if she could barely wait`
 	],
 	where: [
 		`a word you use to ask which place a thing is about, or what place a thing is near - you might ask "where is my guard", if they aren't near you but you would like to find them, or "where is my daughter", if you're in the middle of a game of hide and find`
 	],
-	whether: [``],
-	which: [``],
-	while: [``],
+	whether: [`a word you use to ask for one out of two, or to say you aren't sure which one of two to go with`],
+	which: [`ask to know, out of more than one people or stuff, what one or group of them is the one`, `a word you use to say you are about to say more about a thing you said before`],
+	while: [`a group of time`, `at the same time`, `in some group of time`],
 	whisper: [
 		`say something in a very very quiet way, so your breath is almost as loud as your word`
 	],
@@ -1519,15 +1581,15 @@ export const definitions: Record<string, Array<string>> = {
 	who: [
 		`a word you use to ask which person a thing is about - you might ask "Doctor who?", to find out which doctor gave someone their new knee, or you might ask "Mrs. who?" to ask a child which teacher they have in their class, or "who is on that train" if you see someone wave to it but you don't recognize anyone on it`
 	],
-	whole: [``],
+	whole: [`all of a thing`, `when all of a thing is in one piece, nothing did break it yet`],
 	why: [
 		`a word you use to ask a question about the reason a thing is the way it is - often, a student will ask this to a teacher - children ask this a lot`
 	],
-	wide: [``],
+	wide: [`when it is far from one side to the other of something, and each side isn't the one you face most often`],
 	wife: [
 		`a woman you live with and should love very much - a woman you promise to go to bed with as long as you both live - a woman you kiss and fuck because you love each other`
 	],
-	will: [``],
+	will: [`your set of what you want and how your thought does change how you act`, `a word you use to ask whether a thing will happen or not`],
 	wind: [`when air does move past the world - it can be cold or loud sometimes`],
 	window: [`a thing you can look through to see the world outside when you are inside something`],
 	wipe: [`push water or something like it gently off something else`],
@@ -1549,9 +1611,9 @@ export const definitions: Record<string, Array<string>> = {
 		`what you do to get money, often from the morning until the afternoon - or more often than that, if you are too busy`
 	],
 	world: [`everything around you except for the far away sky`],
-	worry: [``],
+	worry: [`feel not sure about what will happen, and think that what might happen might be bad`],
 	worse: [`when one thing is not as good as another thing it is worse`],
-	would: [``],
+	would: [`like "will" but in the past, or in a situation that is not truth`],
 	"wouldn't": [`short for "would not"`],
 	wow: [`a sound you make when you fell surprise or shock`],
 	wrap: [`cover something in something soft`],
@@ -1569,7 +1631,7 @@ export const definitions: Record<string, Array<string>> = {
 	yes: [
 		`what you say when you think what was said is right, and you want to say something that is more sure than "yeah"`
 	],
-	yet: [``],
+	yet: [`up to the time it is now`, `like "however"`],
 	you: [
 		`the person who can see from your eye and feel from your hand - the person who right now can understand this word - the person who has the same mum and dad as you who is not your brother or sister - should be one of the people who is most often in your house`
 	],
