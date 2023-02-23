@@ -1,36 +1,40 @@
-<script>
+<script lang="ts">
 	import { definitions } from '../constants/definitions';
 	import { getDefinedWords, sanitizeWord } from '../utils/definitionManipulation';
 
 	const definedWords = getDefinedWords(definitions);
+	const getSplitDefinitions = (selectedWord: string) =>
+		definitions[sanitizeWord(selectedWord)].map((definition) => definition.split(' '));
 
 	let selectedWord = definedWords[0][0];
-	let splitDefinitions = definitions[sanitizeWord(selectedWord)].split(" ");
+	let splitDefinitions = getSplitDefinitions(selectedWord);
 
-    let clicks = 0;
+	let clicks = 0;
 </script>
 
 <h1>Top Ten Hundred of Word</h1>
 <p><b>{selectedWord}</b></p>
-{#each splitDefinition as word}
-	<a
-		on:click={() => {
-			if (definitions[sanitizeWord(word)]) {
-				selectedWord = word;
-				splitDefinition = definitions[sanitizeWord(word)].split(" ");
-                clicks++;
-			}
-		}}
-		class={definitions[sanitizeWord(word)] ? 'clickable' : ''}
-	>
-		{`${word} `}
-	</a>
+{#each splitDefinitions as splitDefinition}
+	{#each splitDefinition as word}
+		<a
+			on:click={() => {
+				if (definitions[sanitizeWord(word)]) {
+					selectedWord = word;
+					splitDefinitions = getSplitDefinitions(word);
+					clicks++;
+				}
+			}}
+			class={definitions[sanitizeWord(word)] ? 'clickable' : ''}
+		>
+			{`${word} `}
+		</a>
+	{/each}
 {/each}
 <p>You've taken {clicks} clicks</p>
 
 <style>
 	.clickable {
 		cursor: pointer;
-        font-weight: bold;
+		font-weight: bold;
 	}
 </style>
