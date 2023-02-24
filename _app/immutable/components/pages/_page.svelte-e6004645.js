@@ -1647,7 +1647,8 @@ const definitions = {
   ],
   yourself: [`you - every bit of you`]
 };
-const sanitizeWord = (word) => word.toLowerCase().replace(/[.,/#!$%^&*;":{}=_`~()?/-]/g, "");
+const sanitizeWord = (word) => word.replace(/[.,/#!$%^&*;":{}=_`~()?/-]/g, "");
+const getObjectKey = (word) => sanitizeWord(word).toLowerCase();
 const getDefinedWords = (definitions2) => Object.entries(definitions2).filter((entry) => entry[1][0].length > 0);
 const _page_svelte_svelte_type_style_lang = "";
 function get_each_context(ctx, list, i) {
@@ -1691,7 +1692,7 @@ function create_each_block_1(ctx) {
       this.h();
     },
     h() {
-      attr(a, "class", a_class_value = null_to_empty(definitions[sanitizeWord(
+      attr(a, "class", a_class_value = null_to_empty(definitions[getObjectKey(
         /*word*/
         ctx[9]
       )] ? "clickable" : "") + " svelte-74e2ed");
@@ -1711,7 +1712,7 @@ function create_each_block_1(ctx) {
       ctx[9]} `))
         set_data(t, t_value);
       if (dirty & /*splitDefinitions*/
-      2 && a_class_value !== (a_class_value = null_to_empty(definitions[sanitizeWord(
+      2 && a_class_value !== (a_class_value = null_to_empty(definitions[getObjectKey(
         /*word*/
         ctx[9]
       )] ? "clickable" : "") + " svelte-74e2ed")) {
@@ -1756,7 +1757,7 @@ function create_each_block(ctx) {
       insert_hydration(target, each_1_anchor, anchor);
     },
     p(ctx2, dirty) {
-      if (dirty & /*definitions, sanitizeWord, splitDefinitions, selectedWord, getSplitDefinitions, clicks*/
+      if (dirty & /*definitions, getObjectKey, splitDefinitions, selectedWord, getSplitDefinitions, clicks*/
       15) {
         each_value_1 = /*splitDefinition*/
         ctx2[6];
@@ -1790,6 +1791,10 @@ function create_fragment(ctx) {
   let t1;
   let p0;
   let b;
+  let t2_value = sanitizeWord(
+    /*selectedWord*/
+    ctx[0]
+  ) + "";
   let t2;
   let t3;
   let t4;
@@ -1812,10 +1817,7 @@ function create_fragment(ctx) {
       t1 = space();
       p0 = element("p");
       b = element("b");
-      t2 = text(
-        /*selectedWord*/
-        ctx[0]
-      );
+      t2 = text(t2_value);
       t3 = space();
       for (let i = 0; i < each_blocks.length; i += 1) {
         each_blocks[i].c();
@@ -1839,11 +1841,7 @@ function create_fragment(ctx) {
       var p0_nodes = children(p0);
       b = claim_element(p0_nodes, "B", {});
       var b_nodes = children(b);
-      t2 = claim_text(
-        b_nodes,
-        /*selectedWord*/
-        ctx[0]
-      );
+      t2 = claim_text(b_nodes, t2_value);
       b_nodes.forEach(detach);
       p0_nodes.forEach(detach);
       t3 = claim_space(nodes);
@@ -1881,13 +1879,12 @@ function create_fragment(ctx) {
     },
     p(ctx2, [dirty]) {
       if (dirty & /*selectedWord*/
-      1)
-        set_data(
-          t2,
-          /*selectedWord*/
-          ctx2[0]
-        );
-      if (dirty & /*splitDefinitions, definitions, sanitizeWord, selectedWord, getSplitDefinitions, clicks*/
+      1 && t2_value !== (t2_value = sanitizeWord(
+        /*selectedWord*/
+        ctx2[0]
+      ) + ""))
+        set_data(t2, t2_value);
+      if (dirty & /*splitDefinitions, definitions, getObjectKey, selectedWord, getSplitDefinitions, clicks*/
       15) {
         each_value = /*splitDefinitions*/
         ctx2[1];
@@ -1936,12 +1933,12 @@ function create_fragment(ctx) {
 }
 function instance($$self, $$props, $$invalidate) {
   const definedWords = getDefinedWords(definitions);
-  const getSplitDefinitions = (selectedWord2) => definitions[sanitizeWord(selectedWord2)].map((definition) => definition.split(" "));
+  const getSplitDefinitions = (selectedWord2) => definitions[getObjectKey(selectedWord2)].map((definition) => definition.split(" "));
   let selectedWord = definedWords[0][0];
   let splitDefinitions = getSplitDefinitions(selectedWord);
   let clicks = 0;
   const click_handler = (word) => {
-    if (definitions[sanitizeWord(word)]) {
+    if (definitions[getObjectKey(word)]) {
       $$invalidate(0, selectedWord = word);
       $$invalidate(1, splitDefinitions = getSplitDefinitions(word));
       $$invalidate(2, clicks++, clicks);
