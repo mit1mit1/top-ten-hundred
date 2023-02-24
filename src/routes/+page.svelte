@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { definitions } from '../constants/definitions';
-	import { getDefinedWords, sanitizeWord } from '../utils/definitionManipulation';
+	import { getDefinedWords, sanitizeWord, getObjectKey } from '../utils/definitionManipulation';
 
 	const definedWords = getDefinedWords(definitions);
 	const getSplitDefinitions = (selectedWord: string) =>
-		definitions[sanitizeWord(selectedWord)].map((definition) => definition.split(' '));
+		definitions[getObjectKey(selectedWord)].map((definition) => definition.split(' '));
 
 	let selectedWord = definedWords[0][0];
 	let splitDefinitions = getSplitDefinitions(selectedWord);
@@ -13,18 +13,18 @@
 </script>
 
 <h1>Top Ten Hundred of Word</h1>
-<p><b>{selectedWord}</b></p>
+<p><b>{sanitizeWord(selectedWord)}</b></p>
 {#each splitDefinitions as splitDefinition}
 	{#each splitDefinition as word}
 		<a
 			on:click={() => {
-				if (definitions[sanitizeWord(word)]) {
+				if (definitions[getObjectKey(word)]) {
 					selectedWord = word;
 					splitDefinitions = getSplitDefinitions(word);
 					clicks++;
 				}
 			}}
-			class={definitions[sanitizeWord(word)] ? 'clickable' : ''}
+			class={definitions[getObjectKey(word)] ? 'clickable' : ''}
 		>
 			{`${word} `}
 		</a>

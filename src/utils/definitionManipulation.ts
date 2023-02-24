@@ -1,9 +1,10 @@
-export const sanitizeWord = (word: string) => word.toLowerCase().replace(/[.,/#!$%^&*;":{}=_`~()?/-]/g, '');
+export const sanitizeWord = (word: string) => word.replace(/[.,/#!$%^&*;":{}=_`~()?/-]/g, '');
+export const getObjectKey = (word: string) => sanitizeWord(word).toLowerCase();
 
 export const getWords = (definition: string) => {
 	return definition
 		.split(/[ ,/-]+/)
-		.map(sanitizeWord)
+		.map(getObjectKey)
 		.filter((word) => word.length > 0);
 };
 
